@@ -1,5 +1,4 @@
 import pandas as pd 
-
 import os
 import numpy as np
 import pandas as pd
@@ -55,13 +54,13 @@ def online(question):
     prediction = NB.predict(question_as_vector)
     return prediction[0]
 
-from data.Bard import Chatbot
+from bardapi import Bard
 
 token = os.environ['TOKEN']
-chatbot = Chatbot(token)
+chatbot = Bard(token=token)
 
 def bard(subject):
-    return chatbot.ask(subject)
+    return chatbot.get_answer(subject)
 
 
 
