@@ -1,9 +1,13 @@
 import pandas as pd 
 
+import os
 import numpy as np
 import pandas as pd
 import warnings 
 from sklearn.model_selection import train_test_split
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # rids the console of warnings
 import warnings
@@ -53,7 +57,7 @@ def online(question):
 
 from data.Bard import Chatbot
 
-token = "Xwgld1FDRy3tuhuKlphbp-EFFvUBADa7-hna_SOzGZuyrYOhITTAcoXu-tUZkLPbWmDbdw."
+token = os.environ['TOKEN']
 chatbot = Chatbot(token)
 
 def bard(subject):
