@@ -56,11 +56,10 @@ def online(question):
 
 from bardapi import Bard
 
-token = os.environ['TOKEN']
-chatbot = Bard(token=token)
+token = os.getenv('TOKEN')
 
 def bard(subject):
-    return chatbot.get_answer(subject)
+    return Bard(token=token).get_answer(subject)
 
 
 
