@@ -1,1 +1,0 @@
-web: app:app --reload --host
